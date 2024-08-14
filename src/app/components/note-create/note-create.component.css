@@ -1,0 +1,8 @@
+.headerNote {
+  width: 600px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
