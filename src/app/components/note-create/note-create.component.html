@@ -1,47 +1,50 @@
-<form [formGroup]="addNoteForm">
-  <tui-input
-    formControlName="headerNote"
-    tuiTextfieldSize="m"
-    class="headerNote tui-space_bottom-3"
-    (click)="toggleShowTextForm()"
-    [tuiTextfieldCleaner]="true"
-    [tuiTextfieldLabelOutside]="true"
-  >
-    Заметка...
-    <input
-      placeholder="Введите заголовок"
-      autocomplete="off"
-      tuiTextfieldLegacy
-      type="text"
-    />
-  </tui-input>
-  <tui-textarea
-    *ngIf="isShowTextForm"
-    formControlName="textNote"
-    [expandable]="true"
-    [tuiTextfieldLabelOutside]="true"
-    class="tui-space_bottom-3"
-  >
-    Заметка...
-  </tui-textarea>
-  <section class="buttons" *ngIf="isShowTextForm">
-    <button
-      size="s"
-      appearance="secondary"
-      class="tui-space_bottom-3 tui-space_left-3"
-      (click)="saveNote()"
-      tuiButton
+<section class="note-create">
+  <form [formGroup]="addNoteForm">
+    <tui-input
+      formControlName="headerNote"
+      tuiTextfieldSize="m"
+      class="headerNote tui-space_bottom-3"
+      (click)="toggleShowTextForm(false)"
+      [tuiTextfieldCleaner]="true"
+      [tuiTextfieldLabelOutside]="true"
     >
-      Сохранить
-    </button>
+      Заметка...
+      <input
+        placeholder="Введите заголовок (необязательно)"
+        autocomplete="off"
+        tuiTextfieldLegacy
+        type="text"
+      />
+    </tui-input>
+    <tui-textarea
+      *ngIf="isShowTextForm"
+      formControlName="textNote"
+      [expandable]="true"
+      [tuiTextfieldLabelOutside]="true"
+      class="tui-space_bottom-3"
+    >
+      Заметка...
+    </tui-textarea>
+    <section class="buttons" *ngIf="isShowTextForm">
+      <button
+        size="s"
+        appearance="secondary"
+        class="tui-space_bottom-3 tui-space_left-3"
+        (click)="saveNote()"
+        tuiButton
+      >
+        Сохранить
+      </button>
 
-    <button
-      size="s"
-      appearance="destructive"
-      class="tui-space_bottom-3 tui-space_left-3"
-      tuiButton
-    >
-      Удалить
-    </button>
-  </section>
-</form>
+      <button
+        size="s"
+        appearance="destructive"
+        class="tui-space_bottom-3 tui-space_left-3"
+        (click)="resetNote()"
+        tuiButton
+      >
+        Удалить
+      </button>
+    </section>
+  </form>
+</section>

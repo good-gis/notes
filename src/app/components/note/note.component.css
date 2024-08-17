@@ -1,0 +1,52 @@
+.note {
+  position: relative;
+  width: 250px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.title {
+  text-align: center;
+}
+
+.delete {
+  position: absolute;
+  top: 10px; /* Расположение кнопки удаления относительно карточки */
+  right: 10px; /* Расположение кнопки удаления относительно карточки */
+  background-color: var(--tui-background-neutral-2);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  opacity: 0; /* Кнопка скрыта по умолчанию */
+  transition: opacity 0.3s ease; /* Плавный переход для видимости кнопки */
+}
+
+.note:hover .delete {
+  opacity: 1; /* Показывать кнопку при наведении на карточку */
+}
+
+.note:hover .delete:hover {
+  background-color: red;
+}
+
+.open-full-screen {
+  position: absolute;
+  top: 10px; /* Расположение кнопки удаления относительно карточки */
+  right: 40px; /* Расположение кнопки удаления относительно карточки */
+  background-color: var(--tui-background-neutral-2);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  opacity: 0; /* Кнопка скрыта по умолчанию */
+  transition: opacity 0.3s ease; /* Плавный переход для видимости кнопки */
+}
+
+.note:hover .open-full-screen {
+  opacity: 1; /* Показывать кнопку при наведении на карточку */
+}
+
+.note:hover .open-full-screen:hover {
+  background-color: blue;
+}

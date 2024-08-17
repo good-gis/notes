@@ -1,1 +1,7 @@
-<app-note></app-note>
+<section class="note-grid">
+  @for (note of noteService.getNotes$() | async; track note.headerNote) {
+    <app-note [note]="note"></app-note>
+  } @empty {
+    <h1>There are no notes.</h1>
+  }
+</section>
