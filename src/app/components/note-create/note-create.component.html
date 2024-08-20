@@ -48,3 +48,8 @@
     </section>
   </form>
 </section>
+
+<ng-template #template>
+  <h2 *ngIf="note?.headerNote" tuiHeader>{{ note?.headerNote }}</h2>
+  <p>{{ note?.textNote }}</p>
+</ng-template>

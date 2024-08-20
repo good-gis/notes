@@ -1,4 +1,8 @@
-<tui-island class="note" [hoverable]="true" [ngStyle]="{'background-color': note?.color}">
+<tui-island
+  class="note"
+  [hoverable]="true"
+  [ngStyle]="{ 'background-color': note?.color }"
+>
   <button
     class="delete"
     appearance="destructive"
@@ -15,10 +19,16 @@
     iconStart="@tui.square-arrow-out-up-right"
     size="xs"
     tuiIconButton
+    (click)="showEditor(note?.id)"
     [style.border-radius.%]="100"
   >
     Edit
   </button>
-  <h3 *ngIf="note?.headerNote" class="tui-island__title title tui-text_h3">{{ note?.headerNote }}</h3>
-  <p class="tui-island__paragraph tui-text_body-m note-content" [innerHTML]="transformedTextNote"></p>
+  <h3 *ngIf="note?.headerNote" class="tui-island__title title tui-text_h3">
+    {{ note?.headerNote }}
+  </h3>
+  <p
+    class="tui-island__paragraph tui-text_body-m note-content"
+    [innerHTML]="transformedTextNote"
+  ></p>
 </tui-island>

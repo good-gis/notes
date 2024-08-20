@@ -11,19 +11,19 @@
 
 .delete {
   position: absolute;
-  top: 10px; /* Расположение кнопки удаления относительно карточки */
-  right: 10px; /* Расположение кнопки удаления относительно карточки */
+  top: 10px;
+  right: 10px;
   background-color: var(--tui-background-neutral-2);
   color: white;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  opacity: 0; /* Кнопка скрыта по умолчанию */
-  transition: opacity 0.3s ease; /* Плавный переход для видимости кнопки */
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .note:hover .delete {
-  opacity: 1; /* Показывать кнопку при наведении на карточку */
+  opacity: 1;
 }
 
 .note:hover .delete:hover {
@@ -32,19 +32,19 @@
 
 .open-full-screen {
   position: absolute;
-  top: 10px; /* Расположение кнопки удаления относительно карточки */
-  right: 40px; /* Расположение кнопки удаления относительно карточки */
+  top: 10px;
+  right: 40px;
   background-color: var(--tui-background-neutral-2);
   color: white;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  opacity: 0; /* Кнопка скрыта по умолчанию */
-  transition: opacity 0.3s ease; /* Плавный переход для видимости кнопки */
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .note:hover .open-full-screen {
-  opacity: 1; /* Показывать кнопку при наведении на карточку */
+  opacity: 1;
 }
 
 .note:hover .open-full-screen:hover {

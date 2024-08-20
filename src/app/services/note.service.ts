@@ -1,14 +1,24 @@
-import {BehaviorSubject} from "rxjs";
-import {Injectable} from "@angular/core";
-import {Note} from "../interfaces/note";
+import { BehaviorSubject } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Note } from '../interfaces/note';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NoteService {
   private readonly storageKey = 'notes';
-  private notesSubject = new BehaviorSubject<Note[]>(this.getNotesFromLocalStorage());
-  private colors: string[] = ['#FADADD', '#AEC6CF', '#B2F4B2', '#FFEBB7', '#C9A9FF', '#F7B3B3', '#B0E5B9'];
+  private notesSubject = new BehaviorSubject<Note[]>(
+    this.getNotesFromLocalStorage(),
+  );
+  private colors: string[] = [
+    '#FADADD',
+    '#AEC6CF',
+    '#B2F4B2',
+    '#FFEBB7',
+    '#C9A9FF',
+    '#F7B3B3',
+    '#B0E5B9',
+  ];
   private colorIndex = 0;
 
   constructor() {}
@@ -17,7 +27,7 @@ export class NoteService {
     const currentNotes = this.getNotesFromLocalStorage();
     const noteWithColor = {
       ...note,
-      color: this.getNextColor()
+      color: this.getNextColor(),
     };
     currentNotes.push(noteWithColor);
     this.updateLocalStorage(currentNotes);
@@ -30,9 +40,14 @@ export class NoteService {
 
   deleteNote(id: string): void {
     const currentNotes = this.getNotesFromLocalStorage();
-    const updatedNotes = currentNotes.filter(note => note.id !== id);
+    const updatedNotes = currentNotes.filter((note) => note.id !== id);
     this.updateLocalStorage(updatedNotes);
     this.notesSubject.next(updatedNotes);
+  }
+
+  getNote(id: string): Note {
+    const currentNotes = this.getNotesFromLocalStorage();
+    return currentNotes.filter((note) => note.id === id)[0];
   }
 
   private getNotesFromLocalStorage(): Note[] {
